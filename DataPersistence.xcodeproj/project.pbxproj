@@ -15,6 +15,14 @@
 		738CC0AA24F5456F0096D071 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 738CC0A824F5456F0096D071 /* LaunchScreen.storyboard */; };
 		738CC0B524F5456F0096D071 /* DataPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738CC0B424F5456F0096D071 /* DataPersistenceTests.swift */; };
 		738CC0C024F5456F0096D071 /* DataPersistenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738CC0BF24F5456F0096D071 /* DataPersistenceUITests.swift */; };
+		738CC0CE24F54DAA0096D071 /* FileManegerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738CC0CD24F54DAA0096D071 /* FileManegerExtension.swift */; };
+		738CC0D024F554E30096D071 /* OnBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738CC0CF24F554E30096D071 /* OnBoardViewController.swift */; };
+		738CC0D224F55A9C0096D071 /* OnBoardingStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738CC0D124F55A9C0096D071 /* OnBoardingStatusModel.swift */; };
+		738CC0D924F5AD460096D071 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738CC0D824F5AD460096D071 /* Place.swift */; };
+		738CC0DB24F5ADC60096D071 /* PlacesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738CC0DA24F5ADC60096D071 /* PlacesRepository.swift */; };
+		738CC0DD24F5B0AD0096D071 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738CC0DC24F5B0AD0096D071 /* Repository.swift */; };
+		738CC0DF24F5B3350096D071 /* RepositoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738CC0DE24F5B3350096D071 /* RepositoryItem.swift */; };
+		73E1920B24F6BA7900A1C73B /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E1920A24F6BA7900A1C73B /* FileHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		738CC0BB24F5456F0096D071 /* DataPersistenceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataPersistenceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		738CC0BF24F5456F0096D071 /* DataPersistenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceUITests.swift; sourceTree = "<group>"; };
 		738CC0C124F5456F0096D071 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		738CC0CD24F54DAA0096D071 /* FileManegerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManegerExtension.swift; sourceTree = "<group>"; };
+		738CC0CF24F554E30096D071 /* OnBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardViewController.swift; sourceTree = "<group>"; };
+		738CC0D124F55A9C0096D071 /* OnBoardingStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingStatusModel.swift; sourceTree = "<group>"; };
+		738CC0D824F5AD460096D071 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		738CC0DA24F5ADC60096D071 /* PlacesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRepository.swift; sourceTree = "<group>"; };
+		738CC0DC24F5B0AD0096D071 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		738CC0DE24F5B3350096D071 /* RepositoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryItem.swift; sourceTree = "<group>"; };
+		73E1920A24F6BA7900A1C73B /* FileHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,8 @@
 		738CC09C24F5456E0096D071 /* DataPersistence */ = {
 			isa = PBXGroup;
 			children = (
+				73E1920924F6BA5E00A1C73B /* FileManegerHelp */,
+				738CC0D324F5AAEC0096D071 /* Repository */,
 				738CC09D24F5456E0096D071 /* AppDelegate.swift */,
 				738CC09F24F5456E0096D071 /* SceneDelegate.swift */,
 				738CC0A124F5456E0096D071 /* ViewController.swift */,
@@ -106,6 +124,9 @@
 				738CC0A624F5456F0096D071 /* Assets.xcassets */,
 				738CC0A824F5456F0096D071 /* LaunchScreen.storyboard */,
 				738CC0AB24F5456F0096D071 /* Info.plist */,
+				738CC0CD24F54DAA0096D071 /* FileManegerExtension.swift */,
+				738CC0CF24F554E30096D071 /* OnBoardViewController.swift */,
+				738CC0D124F55A9C0096D071 /* OnBoardingStatusModel.swift */,
 			);
 			path = DataPersistence;
 			sourceTree = "<group>";
@@ -126,6 +147,25 @@
 				738CC0C124F5456F0096D071 /* Info.plist */,
 			);
 			path = DataPersistenceUITests;
+			sourceTree = "<group>";
+		};
+		738CC0D324F5AAEC0096D071 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				738CC0D824F5AD460096D071 /* Place.swift */,
+				738CC0DA24F5ADC60096D071 /* PlacesRepository.swift */,
+				738CC0DC24F5B0AD0096D071 /* Repository.swift */,
+				738CC0DE24F5B3350096D071 /* RepositoryItem.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		73E1920924F6BA5E00A1C73B /* FileManegerHelp */ = {
+			isa = PBXGroup;
+			children = (
+				73E1920A24F6BA7900A1C73B /* FileHelper.swift */,
+			);
+			path = FileManegerHelp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,8 +300,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				738CC0A224F5456E0096D071 /* ViewController.swift in Sources */,
+				738CC0DB24F5ADC60096D071 /* PlacesRepository.swift in Sources */,
+				738CC0DF24F5B3350096D071 /* RepositoryItem.swift in Sources */,
+				738CC0CE24F54DAA0096D071 /* FileManegerExtension.swift in Sources */,
+				73E1920B24F6BA7900A1C73B /* FileHelper.swift in Sources */,
+				738CC0D224F55A9C0096D071 /* OnBoardingStatusModel.swift in Sources */,
 				738CC09E24F5456E0096D071 /* AppDelegate.swift in Sources */,
 				738CC0A024F5456E0096D071 /* SceneDelegate.swift in Sources */,
+				738CC0D024F554E30096D071 /* OnBoardViewController.swift in Sources */,
+				738CC0D924F5AD460096D071 /* Place.swift in Sources */,
+				738CC0DD24F5B0AD0096D071 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

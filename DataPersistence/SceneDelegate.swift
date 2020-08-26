@@ -12,12 +12,57 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    lazy var navigationController: UINavigationController = {
+        let navigationController = UINavigationController(rootViewController: ViewController())
+        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.navigationBar.tintColor = .blue
+        return navigationController
+    }()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+//        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        if let windowScene = scene as? UIWindowScene {
+            let window = UIWindow(windowScene: windowScene)
+            window.rootViewController = navigationController
+            self.window = window
+            window.makeKeyAndVisible()
+            
+            
+            //MARK: - #1 App Sandbox
+            
+            FileManager.default.printContent(from: NSHomeDirectory(), recursivelly: true)
+            
+            //MARK: - #2 PropertyList
+            
+//            let onBoardingStatusURL = URL(fileURLWithPath: NSHomeDirectory()+"/Library/Preferences/"+OnBoardingStatus.plistName)
+//            if let data = try? Data(contentsOf: onBoardingStatusURL),
+//               let onBoardingPropertyist = try? PropertyListDecoder().decode(OnBoardingStatus.self, from: data) {
+//
+//                print("FirstLaunch:", onBoardingPropertyist.firstLaunch)
+//                print("FirstLaunchTimestamp:", onBoardingPropertyist.firstLaunchTimestamp)
+//                print("OnBoarding has already been seen by the user.")
+//            } else {
+//                let status = OnBoardingStatus()
+//                if let data = try? PropertyListEncoder().encode(status){
+//                    try? data.write(to: onBoardingStatusURL)
+//                }
+//                navigationController.present(OnBoardViewController(), animated: true)
+//            }
+            
+            //MARK: - #3 UserDefaults
+            
+            let isFirstLaunch: Bool = (UserDefaults.standard.value(forKey: "FirstLaunch") as? Bool) ?? false
+            if !isFirstLaunch {
+                UserDefaults.standard.set(true, forKey: "FirstLaunch")
+                UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: "FirstLaunchTimestamp")
+                navigationController.present(OnBoardViewController(), animated: true)
+            }
+
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
