@@ -52,16 +52,23 @@ extension Repository {
     
     func readItem(id: UUID) -> Item? {
         
-        return readAllItems().first(where: { $0.id == id})
+        if let data = FileHelper().retrieveFile(at: id.uuidString) {
+            let item = try? JSONDecoder().decode(Item.self, from: data)
+            return item
+        }
+        return nil
+//        return readAllItems().first(where: { $0.id == id})
     }
     
     func updateItem(item: Item) {
         
-        self.items = items.map { $0.id == item.id ? item : $0 }
+        if let data = try? JSONEncoder().encode(item) {
+            FileHelper().updateFile(at: item.id.uuidString, data: data)
+        }
     }
     
     func deleteItem(id: UUID) {
-        
+        FileHelper().removeFile(at: id.uuidString )
     }
     
     func lock(id: UUID, password: String) -> Bool {
